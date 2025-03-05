@@ -10,8 +10,6 @@ int fibonacci(int n){
 int main()
 {
 
-    char a = '1';
-    cout << a+1 << endl;
     int n;
     cin >> n;
     for(int i=0; i<n; i++){
