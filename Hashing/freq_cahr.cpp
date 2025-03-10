@@ -10,24 +10,21 @@ int fibonacci(int n){
 int main()
 {
 
-    int n;
-    cin >> n;
-    int arr[n];
-    for(int i=0; i<n; i++){
-        cin >> arr[i];
-    }
+    string str;
+    cin >> str;
 
-    map<int, int> hash;
-    for(int i=0; i<n; i++){
-        hash[arr[i]] += 1;
+    int hash[26] = {0};
+    for(int i=0; i<str.size(); i++){
+        // cout << str[i] - 'a' << endl;
+        hash[str[i] - 'a'] += 1;
     }
 
     int q;
     cin >> q;
     while(q>0){
-        int x;
-        cin >> x;
-        cout << hash[x] << endl;
+        char c;
+        cin >> c;
+        cout << hash[c-'a'] << endl;
         q -= 1;
     }
 

@@ -17,7 +17,7 @@ int main()
         cin >> arr[i];
     }
 
-    map<int, int> hash;
+    int hash[13] = {0};
     for(int i=0; i<n; i++){
         hash[arr[i]] += 1;
     }
