@@ -1,35 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fibonacci(int n){
-    if(n <=1) { return n;}
-    return fibonacci(n-1) + fibonacci(n-2);
+void selectionSort(int arr[], int n){
+        // Selection sort
+        for(int i=0; i<n-1; i++){
+            int min = i;
+            for(int j=i; j<n; j++){
+                if(arr[min] > arr[j]){
+                    min = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+        }
 }
-
-
 int main()
 {
-
     int n;
     cin >> n;
     int arr[n];
-    for(int i=0; i<n; i++){
+    for(int i=0; i<n; i++){  
         cin >> arr[i];
     }
 
-    map<int, int> hash;
+    // Selection sort
+    selectionSort(arr, n);
+
     for(int i=0; i<n; i++){
-        hash[arr[i]] += 1;
+      cout << arr[i] << " ";   
     }
 
-    int q;
-    cin >> q;
-    while(q>0){
-        int x;
-        cin >> x;
-        cout << hash[x] << endl;
-        q -= 1;
-    }
 
     return 0;
 }
