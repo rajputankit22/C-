@@ -12,21 +12,12 @@ vector<int> sorted(vector<int> &arr, int k)
         arr[j] =temp;
     }
 
-    for (int i = 0; i < arr.size(); i++)
-    {
-        /* code */
-        cout << arr[i] << endl;
-    }
-
     for(int i=k, j=arr.size()-1; i<(arr.size()+k)/2; i++,j--){
         temp = arr[i];
         arr[i] = arr[j];
         arr[j] =temp;
     }
 
-
-
-    cout << "------";
     for(int i=0, j=arr.size()-1; i<arr.size()/2; i++,j--){
         temp = arr[i];
         arr[i] = arr[j];
