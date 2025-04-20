@@ -4,6 +4,25 @@ using namespace std;
 vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
 {
 	// Write your code here.
+	vector<int> arr(m, 0);
+	vector<int> inter;
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			if(arr1[i] == arr2[j] && arr[j] == 0){
+				inter.push_back(arr1[i]);
+                arr[j] = 1;
+				break;
+			}
+            if(arr2[j] > arr1[i]) break;
+		}
+	}
+	return inter;
+
+}
+
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	// Write your code here.
 	vector<int> inter;
     int i = 0;
     int j = 0;
